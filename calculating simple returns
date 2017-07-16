@@ -1,0 +1,16 @@
+Define ko_pep as the ratio expressing the value of the 
+share price of the Coca Cola company in terms of the share price of PepsiCo.
+Use plot.zoo() to visualize the variation in this ratio over time. 
+Note that when the value of the ratio is larger than 1, the performance of ko since January 2003 is higher than that of pep.
+As a reference line, use abline() to include a horizontal line at h=1. 
+Note that where the value of the ratio is larger than one, the the Coca Cola Company outperforms Pepsico and vice versa
+This is used for caulcating simple returns. 
+
+# Define ko_pep 
+ko_pep <- ko / pep 
+
+# Make a time series plot of ko_pep
+  plot.zoo(ko_pep)
+  
+# Add as a reference, a horizontal line at 1
+  abline(h=1)
