@@ -1,0 +1,29 @@
+Exploring the monthly S&P 500 returns
+100xp
+For the upcoming exercises you will examine the monthly performance of the S&P 500. A picture is worth a thousand words. This is why most analyses of performance start by studying the time series plot of the value of an investment.
+
+A plot of the S&P 500 for the period of 1986 until August 2016 is shown to your right. Each observation on this plot is an end-of-day value. This chart shows a number of booms and busts. Take a look at the chart, do you see why the 2000s are so often called the lost decade of investing?
+
+The PerformanceAnalytics and xts-package are preloaded, and the daily prices for the S&P 500 are available in your workspace as the variable sp500. This variable is of the xts time series class. This means that each observation has a time-stamp. Your job is to describe the monthly performance of the S&P 500. To do so, you will first need to aggregate daily price series to end-of-month prices. You will then calculate the monthly returns and visualize them in a table.
+
+Instructions
+Use the function to.monthly() with the argument sp500 and assign this to sp500_monthly.
+Print the first six rows of sp500_monthly. Notice how aggregating the data has resulted in a table of four columns holding the opening, lowest, highest, and closing price of sp500 for each month.
+Create sp500_returns using the function Return.calculate() on sp500_monthly using the closing prices (fourth column in sp500_monthly).
+Use plot.zoo() to plot the time series of sp500_returns
+Use the function table.CalendarReturns() in PerformanceAnalytics to present the monthly return data in a table format showing year by month
+
+# Convert the daily frequency of sp500 to monthly frequency: sp500_monthly
+sp500_monthly <- to.monthly(sp500)
+
+# Print the first six rows of sp500_monthly
+head(sp500_monthly, h = 6)
+
+# Create sp500_returns using Return.calculate using the closing prices
+sp500_returns <- Return.calculate(sp500_monthly[,4])
+
+# Time series plot
+plot.zoo(sp500_returns)
+
+# Produce the year x month table
+table.CalendarReturns(sp500_returns)
