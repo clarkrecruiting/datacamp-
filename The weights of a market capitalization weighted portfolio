@@ -1,0 +1,25 @@
+The weights of a market capitalization weighted portfolio
+100xp
+In a market capitalization weighted portfolio, the weights are given by the individual assets' market capitalization (or market value), divided by the sum of the market capitalizations of all assets. A typical example is the S&P 500 portfolio invested in the 500 largest companies listed on the US stock exchanges (NYSE, Nasdaq). Note that by dividing by the sum of asset values across all portfolio assets, the portfolio weights sum to unity (one).
+
+As an exercise, inspect the distribution of market capitalization based weights when the portfolio is invested in 10 stocks. For this exercise you can use market capitalizations of 5, 8, 9, 20, 25, 100, 100, 500, 700 and 2000 million USD.
+
+Instructions
+Define the vector marketcaps holding the market capitalizations.
+Calculate the weights of marketcaps and assign them to weights.
+Print a summary of weights.
+Create a barplot of weights.
+
+
+
+# Define marketcaps
+ marketcaps <- c(5, 8, 9, 20 , 25, 100, 100, 500, 700, 2000)
+  
+# Compute the weights
+weights <- marketcaps/sum(marketcaps)
+  
+# Inspect summary statistics
+summary(weights)
+  
+# Create a barplot of weights
+  barplot(weights)
