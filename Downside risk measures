@@ -1,0 +1,25 @@
+Downside risk measures
+0xp
+The standard deviation gives equal weight to positive and negative returns in calculating the return variability. When the return distribution is asymmetric (skewed), investors use additional risk measures that focus on describing the potential losses. One such measure of downside risk is the Semi-Deviation. The Semi-Deviation is the calculation of the variability of returns below the mean return.
+
+Another more popular measure is the so-called Value-at-Risk (or VaR). Loosely speaking, the VaR corresponds to the 5% quantile of the return distribution, meaning that a more negative return can only happen with a probability of 5%. For example you might ask: "what is the largest loss I could potentially take within the next quarter, with 95% confidence?"
+
+The expected shortfall is another measure of risk that focuses on the average loss below the 5% VaR quantile.
+
+In this exercise you will examine the potential risk of the monthly returns of the S&P 500. You will use the functions SemiDeviation(), VaR(), and ES(). These functions all require the argument R, which is an xts, vector, matrix, data.frame, timeSeries, or zoo object of asset returns. However the VaR(), and ES() require another argument p, or confidence level, which is p = 0.05 in case of the 5% VaR and ES.
+
+Instructions
+Compute the SemiDeviation() of the monthly returns.
+Use the function VaR() to estimate the 2.5% and 5% value-at-risk of a monthly investment in S&P 500 returns.
+Use the function ES() to estimate the 2.5% and 5% expected shortfall of a monthly investment in S&P 500 returns.
+
+# Calculate the SemiDeviation
+SemiDeviation(sp500_monthly)
+
+# Calculate the value at risk
+VaR(sp500_monthly,p = 0.05)
+VaR(sp500_monthly,p = 0.025)
+
+# Calculate the expected shortfall
+ES(sp500_monthly, p = 0.05)
+ES(sp500_monthly, p = 0.025)
