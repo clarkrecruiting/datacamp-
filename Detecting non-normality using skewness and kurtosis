@@ -1,0 +1,21 @@
+Detecting non-normality using skewness and kurtosis
+0xp
+Returns are most often non-normal in nature. Two metrics key to understanding the distribution of non-normal returns are skewness and kurtosis. The skewness will help you identify whether or not negative or positive returns occur more frequently. A negative skewness indicates that large negative returns occur more often than large positive ones, and vice versa.
+
+Kurtosis will be positive if there are fat tails in your distribution. This means that large positive or negative returns will happen more often than can be assumed under a normal distribution.
+
+The histograms in the plot environment compare the daily and monthly returns of the S&P 500 over the period of 1986 until today. There seems to be a negative skewness() in these plots, and a somewhat greater than normal kurtosis(). Note that, by default, kurtosis() reports the excess kurtosis (that is, the kurtosis minus three). Let's see if the numbers match our observations!
+
+The objects sp500_daily and sp500_monthly are already loaded in your workspace.
+
+Instructions
+Compute the skewness of sp500_daily and sp500_monthly.
+Compute the excess kurtois of sp500_daily and sp500_monthly.
+
+#  Compute the skewness 
+skewness(sp500_daily)
+skewness(sp500_monthly)
+
+# Compute the excess kurtois 
+kurtosis(sp500_daily)
+kurtosis(sp500_monthly)
