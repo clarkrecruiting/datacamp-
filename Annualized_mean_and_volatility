@@ -1,0 +1,25 @@
+Annualized mean and volatility
+0xp
+The mean and volatility of monthly returns corresponds to the average and standard deviation over a monthly investment horizon. Investors annualize those statistics to show the performance over an annual investment horizon.
+
+To do so, the package PerformanceAnalytics has the function Return.annualized() and StdDev.annualized() to compute the (geometrically) annualized mean return and annualized standard deviation for you.
+
+Remember that the sharpe ratio is found by taking the mean excess returns subtracted by the risk-free rate, and then divided by the volatility! The packages PerformanceAnalytics and sp500_returns are preloaded for you.
+
+Instructions
+Use the function Return.annualized() to compute the annualized mean of sp500_returns.
+Use the function StdDev.annualized() to compute the annualized standard deviation of sp500_returns.
+Calculate the annualized Sharpe Ratio using commands from the PerformanceAnalytics package, assign it to ann_sharpe. Assume the risk free rate is 0.
+Obtain all the above results at once using the function table.AnnualizedReturns().
+
+# Compute the annualized mean
+Return.annualized(sp500_returns)
+
+# Compute the annualized standard deviation
+StdDev.annualized(sp500_returns)
+
+# Compute the annualized Sharpe ratio
+ann_sharpe <- Return.annualized(sp500_returns) / StdDev.annualized(sp500_returns)
+
+# Compute all of the above at once
+table.AnnualizedReturns(sp500_returns)
