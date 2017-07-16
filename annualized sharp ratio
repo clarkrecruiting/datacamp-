@@ -1,0 +1,37 @@
+Excess returns and the portfolio's Sharpe ratio
+0xp
+You just learned how to create descriptive statistics of your portfolio returns. Now you will learn how to evaluate your portfolio's performance!
+
+Performance evaluation involves comparing your investment choices with an alternative investment choice. ￼Most often the performance is compared with investing in an (almost) risk free asset, such as the U.S. Treasury Bill. The return from a U.S. Treasury Bill is known as a risk free rate because Treasury Bills (T-Bills) are backed by the U.S. Government.
+
+In this exercise you will be asked to annualize the risk free rate by using the compound interest formula. The yearly compounded interest rate is given by (1+y)12−1(1+y)12−1. The annual rate is used to estimate a yearly return and is very useful for forecasting.
+
+As you might recall from the video, the Sharpe Ratio is an important metric that tells us the return-to-volatility ratio. It is calculated by taking the mean of excess returns (returns - risk free rate), divided by the volatility of the returns.
+
+Pre-loaded in your workspace is the object rf which contains the one-month rate of a T-Bill. The S&P 500 portfolio returns are still available as sp500_returns.
+
+Instructions
+Calculate the annualized risk free rate using the compound interest formula, assign it to annualized_rf.
+Plot the time-series of annualized_rf using plot.zoo().
+Calculate the excess monthly portfolio return, assign it to sp500_excess.
+Print the mean returns and the mean excess returns. Compare the two.
+Calculate the monthly Sharpe ratio, assign it to sp500_sharpe.
+
+
+# Compute the annualized risk free rate
+annualized_rf <- (1 + rf)^12 - 1
+
+# Plot the annualized risk free rate
+plot.zoo(annualized_rf)
+  
+# Compute the series of excess portfolio returns 
+sp500_excess <- sp500_returns - rf
+
+# Compare the mean
+mean(sp500_excess)
+mean(sp500_returns)
+
+# Compute the Sharpe ratio
+sp500_sharpe <- mean(sp500_excess) / sd(sp500_returns) 
+
+
