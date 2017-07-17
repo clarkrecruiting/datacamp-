@@ -1,0 +1,28 @@
+Interpreting correlation
+0xp
+Now you will learn how to compute the correlation between equity returns and bond returns. Just like volatilities, these correlations are dynamic. Therefore you need to distinguish between a static analysis that calculates correlations over a complete sample, and a dynamic analysis that calculates correlations over a rolling sample. This is a similar analysis as you did for the time-varying performance evaluation in terms of mean return and volatility.
+
+In this exercise you will learn 3 new functions from the PerformanceAnalytics package: chart.Scatter(), chart.Correlation(), and chart.RollingCorrelation().
+
+Instructions
+Plot the equity returns (returns_equities) against the bond returns (returns_bonds) using the function chart.Scatter() with the bond returns on the x-asis. Do you see a relation?
+Compute the correlation between the variables returns_equities and returns_bonds using cor().
+Merge returns_equities, and returns_bonds using merge(). Call this returns.
+Compute and visualize the correlation again, using chart.Correlation() with returns as the argument.
+Compute the rolling 24-month estimates of the bond-equity correlation using the function chart.RollingCorrelation().
+
+
+# Create a scatter plot
+chart.Scatter(returns_bonds, returns_equities)
+
+# Find the correlation
+cor(returns_equities, returns_bonds)
+
+# Merge returns_equities and returns_bonds 
+returns <- merge(returns_equities, returns_bonds)
+
+# Find and visualize the correlation using chart.Correlation
+chart.Correlation(returns)
+
+# Visualize the rolling estimates using chart.RollingCorrelation
+chart.RollingCorrelation(returns_equities, returns_bonds, width = 24)
