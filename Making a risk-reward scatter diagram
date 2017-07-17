@@ -1,0 +1,24 @@
+Making a risk-reward scatter diagram
+0xp
+In this example you have decided to extend your investment opportunity by creating a portfolio that consists of US equities ETF (SPY), US bonds ETF (AGG), a real estate investment trust (VNQ), and an ETF tracking in the GSCI commodities index (GSG). The plot in the environment displays the performance of these investments.
+
+You can also visualize relative attractiveness of the investments by making a scatterplot of the average returns against the portfolio volatilities. In order to do this you need to calculate the averages and volatilities for each asset. This corresponds to each column in the return series returns.
+
+These calculations are made easy by using the function apply() with the first argument as the return data, the second argument is the value of 2 indicating that the calculation should be column-wise, while the third argument is the name of the function that needs to be applied on each column.
+
+Instructions
+Compute the vector of average returns on those four investments using apply() and call this means (Note that you could have used colMeans() as well!).
+Do the same to compute the vector standard deviations and call this sds.
+Create a scatter plot using the base plot function, where volatilities are the on x axis, and means on the y axis. Labels and a reference line in the plot have been added for you. Don't change this code!
+
+
+# Create a vector of returns 
+means <- apply(returns, 2, "mean")
+  
+# Create a vector of standard deviation
+sds <- apply(returns, 2, "sd")
+
+# Create a scatter plot
+plot(sds, means)
+text(sds, means, labels = colnames(returns), cex = 0.7)
+abline(h = 0, lty = 3)
