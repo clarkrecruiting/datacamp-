@@ -1,0 +1,17 @@
+Drawdowns due to buying high, selling low
+0xp
+The volatility, semi-deviation, value-at-risk, and expected shortfall are all measures that describe risk over 1 period. These metrics do not do a great job at describing the worst case risk of buying at a peak, and selling at a trough. This sort of risk can be quantified by analyzing the portfolio's drawdowns, or peak-to-trough decline in cumulative returns.
+
+The function table.Drawdowns() in PerformanceAnalytics reports the five largest drawdown episodes over a sample period. The package also has another function chart.Drawdown() to visualize the evolution of the drawdowns from each peak over time.
+
+You will now explore the historic drawdown episodes of the monthly returns of the S&P 500. The returns are loaded into your workspace as sp500_monthly.
+
+Instructions
+Calculate the five largest drawdowns using table.Drawdowns().
+Visualize the drawdowns of the monthly returns using chart.Drawdown()
+
+# Table of drawdowns
+table.Drawdowns(sp500_monthly)
+
+# Plot of drawdowns
+chart.Drawdown(sp500_monthly)
